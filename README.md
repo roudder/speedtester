@@ -20,7 +20,7 @@ package main
 
 import (
 	"fmt"
-	"speedtester"
+	"github.com/roudder/speedtester"
 )
 
 func main() {
