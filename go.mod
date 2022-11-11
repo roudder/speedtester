@@ -1,6 +1,6 @@
 module speedtester
 
-go 1.19
+go 1.17
 
 require (
 	github.com/gesquive/fast-cli v0.2.10
