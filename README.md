@@ -2,7 +2,7 @@
 Test the download and upload speeds by using Ookla's https://www.speedtest.net/ and Netflix's https://fast.com/.
 
 Used libs: 
-* Inspired and main ideas from the https://github.com/calin014/speedfast (adapted for more extended way)
+* Inspired and main ideas from the https://github.com/calin014/speedfast (adapted more extended way)
 * Delegates to [showwin/speedtest-go](https://github.com/showwin/speedtest-go) for **speedtest.net**
 
 
@@ -10,7 +10,7 @@ Used libs:
 ## Dependency
 
 ```
-go get github.com/roudder/speedtest
+go get github.com/roudder/speedtester
 ```
 
 ### API Usage
