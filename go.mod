@@ -1,4 +1,4 @@
-module speedtester
+module github.com/roudder/speedtester
 
 go 1.17
 
