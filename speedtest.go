@@ -26,7 +26,7 @@ func (st *MeasureSpeedtest) Measure() (*Measurement, error) {
 	}
 	// TODO: solution is not ideally, sometimes the closest server isn't in the great state, necessary to add logic in the case when server is not working.
 	// get the closest server
-	testServer := serverList.Servers[1]
+	testServer := serverList.Servers[0]
 
 	if err := testServer.DownloadTest(false); err != nil {
 		return nil, fmt.Errorf("DownloadTest fails with: %w", err)

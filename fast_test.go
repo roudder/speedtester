@@ -22,21 +22,34 @@ func BenchmarkTestFastMeasure(b *testing.B) {
 }
 
 func TestDownload(t *testing.T) {
-	httpServer := httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-		res.WriteHeader(http.StatusBadRequest)
-	}))
-	defer func() { httpServer.Close() }()
+	t.Run("http get error", func(t *testing.T) {
+		httpServer := httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
+			res.WriteHeader(http.StatusBadRequest)
+		}))
+		defer func() { httpServer.Close() }()
 
-	err := download(httpServer.Client(), "testurl")
-	assert.Error(t, err)
+		err := download(httpServer.Client(), "testurl")
+		assert.Error(t, err)
+	})
+	t.Run("nil http client", func(t *testing.T) {
+		err := download(nil, "testurl")
+		assert.Error(t, err)
+	})
+
 }
 
 func TestUpload(t *testing.T) {
-	httpServer := httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-		res.WriteHeader(http.StatusBadRequest)
-	}))
-	defer func() { httpServer.Close() }()
+	t.Run("http get error", func(t *testing.T) {
+		httpServer := httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
+			res.WriteHeader(http.StatusBadRequest)
+		}))
+		defer func() { httpServer.Close() }()
 
-	err := upload(httpServer.Client(), "testurl")
-	assert.Error(t, err)
+		err := upload(httpServer.Client(), "testurl")
+		assert.Error(t, err)
+	})
+	t.Run("nil http client", func(t *testing.T) {
+		err := upload(nil, "testurl")
+		assert.Error(t, err)
+	})
 }

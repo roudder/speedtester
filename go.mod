@@ -1,6 +1,6 @@
 module github.com/roudder/speedtester
 
-go 1.17
+go 1.19
 
 require (
 	github.com/gesquive/fast-cli v0.2.10
